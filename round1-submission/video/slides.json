@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Hachimi Mambo: Career Survival Agent",
+    "bullets": ["One Skill: career-survival", "JiuwenSwarm 0.2.4b3, single-agent mode", "Five questions, in order"]
+  },
+  {
+    "title": "1. How we thought while designing the Skill",
+    "bullets": ["An early exit is scored from the state at exit: survival is a constraint",
+                "Seven ordered priorities; a higher rule wins, with stated exceptions",
+                "Every number is our own safety margin, labelled as policy",
+                "48 months: survive, climb, then protect and build wealth"]
+  },
+  {
+    "title": "2. What the logs showed, and what we changed",
+    "bullets": ["26 games; 9 eliminations, 7 at the first level",
+                "Optional costs + weak review -> cash margin",
+                "Story choice cost a promotion -> protect reviews",
+                "Late reaction to warnings -> risk gauge, incident count",
+                "Risk-cutting after weak reviews -> performance first",
+                "61M -> 38M tokens a game: one Skill, no code",
+                "This version: 6 games, all 48 months, mean about 65"]
+  },
+  {
+    "title": "3. Scripts and reference files",
+    "bullets": ["None in the final Skill",
+                "An earlier Python ledger was called inconsistently and bloated the context",
+                "Decisions only compare a few small numbers",
+                "One short document: one place to look"]
+  },
+  {
+    "title": "4. How general and robust the Skill is",
+    "bullets": ["Public statistics, grades, listed effects and tone only",
+                "No event names, story wording or event order",
+                "Stalled actions judged by the change actually observed",
+                "Margins on published scales, not fitted to development games"]
+  },
+  {
+    "title": "5. Agents and agent Skills",
+    "bullets": ["The model is capable but inconsistent",
+                "A Skill gives a stable way of working and carries lessons forward",
+                "Short and ordered beats long and complete",
+                "Limits: no forced compliance, no hidden rules, no removal of randomness"]
+  },
+  {
+    "title": "Thank you",
+    "bullets": ["Hachimi Mambo", "Career Survival Agent"]
+  }
+]
