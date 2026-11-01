@@ -1,0 +1,6 @@
+{
+  "team": "Hachimi Mambo",
+  "name": "Career Survival v19: review-ready risk-first career ladder",
+  "mode": "agent",
+  "instruction": "Load the career-survival skill once and follow it for one 48-month game. Read the public handbook once and create exactly one game; reuse its session_id. Before every decision observe, then take_action with one offered integer choice and a one-sentence English note. Keep only the compact memory the skill describes; do not use the code tool. Survival overrides growth: risk warnings, low Health, Dignity, Network or Wealth, and weak reviews come first. In stories avoid spending wealth when a free option of similar risk exists, and clear risk warnings in the final year. When a statistic stops rising at the current level, move Energy and the main action to one that still grows. In the two months before each review, prefer story options that keep delivery and relationships intact. Do not assume hidden thresholds. On a timeout, observe and check recent logs before retrying. Continue until an explicit ending_score, print it in full, then print DONE."
+}
