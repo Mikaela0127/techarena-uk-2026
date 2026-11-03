@@ -59,3 +59,8 @@ games that went badly, are in the `TESTS.md` files.
 - The simulator, runner and model endpoint belong to the organisers and are not included.
 - The history of this repository starts when the team repository was reorganised; earlier history and other
   members' files were removed before publishing.
+
+## Licence
+
+MIT, see `LICENSE`. This covers the material written for this repository (Skills, design documents, the
+authored parts of the test records, and tools), not the simulator, runner or game content they refer to or quote.
