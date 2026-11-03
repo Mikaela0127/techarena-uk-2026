@@ -34,21 +34,49 @@ automated scores whose live-play part averages three official runs.
 | Folder | Contents |
 |---|---|
 | `round1-submission/` | The round-1 submission (v2): Skill, manifest, design documents, video script and test record |
-| `round3-submission/` | The round-3 candidate (v21d): v2 plus the log-driven rules, its design documents, and the video script and slides |
+| `round3-submission/` | The round-3 submission (v21d): v2 plus the log-driven rules, its design documents, and the video script and slides |
 | `experiments/` | The experiments I kept, each with its own `TESTS.md`, plus small tools for running games and reading logs |
 
 The presentation videos are not included (file size, and they show team members).
 
 ## Results
 
+Official scores:
+
 | Round | Version | Official score |
 |---|---|---|
 | 1 | v2 (`round1-submission/`) | 58.12 |
 | 2 | A teammate's version (not in this repository) | 58.88 |
+| 3 | v21d (`round3-submission/`) | not yet published (3 November 2026) |
 
 On the contest scoreboard as viewed on 3 November 2026, the team was 32nd of 70 scored teams (227 registered
-teams in total). Local results for each variant, including the
-games that went badly, are in the `TESTS.md` files.
+teams in total).
+
+Local test games, one 48-month game each. "Own key" is a cheaper model on our own API key, "competition" is
+the official evaluation model; the two are not comparable, and one game can differ from the next by 20 to 40
+points, so every row shows all games, not only the best:
+
+| Version | Model | Games | Completed 48 months | Mean | Best game |
+|---|---|---|---|---|---|
+| v2 | own key | 8 | 8 | 64.85 | 71.96 |
+| v2 | competition | 2 | 1 | 56.0 | 72.06 |
+| v21 | own key | 4 | 4 | 63.38 | 73.43 |
+| v21 | competition | 2 | 1 | 51.1 | 70.75 |
+| v21d | own key, first batch | 8 | 8 | 63.03 | 78.29 |
+| v21d | own key, all games | 11 | 9 | 54.58 | 78.29 |
+| v21d | competition | 2 | 1 | 58.0 | 68.56 |
+
+Highlights:
+
+- The best game, 78.29 with v21d, was the only one in all our testing to reach the sixth and highest level
+  (level 5 at month 36, level 6 at the final review).
+- Promotion at the first review, where a miss starts a common route to early dismissal, happened in 6 of 8
+  first-batch v21d games on the own key, against 5 of 14 in an earlier own-key baseline.
+- The v21d competition game that ended early never loaded the Skill at all; the alternative `v21g` in
+  `experiments/` adds an instruction that makes loading it the first step.
+
+Every game in the table, including the ones that went badly, is listed in the `TESTS.md` files (v2 in
+`round1-submission/TESTS.md`).
 
 ## Notes
 

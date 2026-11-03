@@ -25,3 +25,12 @@ in the first eighteen months and finished one level lower.
 
 Variants tried and rejected on the same setup are in `experiments/career-survival-v3` and
 `experiments/career-survival-v4`.
+
+Later control games with the same files, engine 1.0.6 / data 1.0.8:
+
+| Date | Model | Outcome | Score | Level | Notes |
+|---|---|---|---|---|---|
+| 31 Oct | own key | completed, 48 months | 64.23 | L5 | control for `experiments/career-survival-v17` |
+| 31 Oct | own key | completed, 48 months | 64.77 | L5 | control for `experiments/career-survival-v17` |
+| 31 Oct | competition (deepseek-v4-flash) | eliminated, month 36 (trust crisis) | 39.92 | L4 | |
+| 31 Oct | competition (deepseek-v4-flash) | completed, 48 months | 72.06 | L5 | the agent never loaded the Skill in this game |
