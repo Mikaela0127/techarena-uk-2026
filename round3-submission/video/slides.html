@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Career Survival v21d</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root { --ink: #1d2433; --muted: #5b6475; --accent: #c2410c; --soft: #fff4ec; --line: #e4e7ee; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #ffffff; color: var(--ink);
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .slide { width: 1280px; height: 720px; padding: 64px 88px; position: relative;
+    page-break-after: always; break-after: page; overflow: hidden; display: flex; flex-direction: column; }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .tag { font-size: 20px; font-weight: 600; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; }
+  h1 { font-size: 54px; line-height: 1.1; margin: 14px 0 22px; }
+  h2 { font-size: 40px; line-height: 1.15; margin: 10px 0 28px; }
+  p, li { font-size: 27px; line-height: 1.45; }
+  ul { margin: 0; padding-left: 30px; }
+  li { margin-bottom: 14px; }
+  ol { margin: 0; padding-left: 34px; }
+  ol li { font-size: 24px; margin-bottom: 6px; }
+  .muted { color: var(--muted); }
+  .foot { position: absolute; bottom: 30px; left: 88px; right: 88px; font-size: 16px; color: var(--muted);
+    display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 12px; }
+  .quote { background: var(--soft); border-left: 8px solid var(--accent); padding: 22px 30px; font-size: 32px;
+    font-weight: 600; margin: 10px 0 26px; }
+  .cols { display: flex; gap: 40px; }
+  .col { flex: 1; }
+  .box { border: 2px solid var(--line); border-radius: 14px; padding: 20px 24px; }
+  .box h3 { margin: 0 0 10px; font-size: 25px; color: var(--accent); }
+  .box p { font-size: 22px; margin: 0; }
+  .cycle { display: flex; align-items: center; gap: 12px; margin: 4px 0 26px; }
+  .step { flex: 1; background: var(--soft); border-radius: 12px; padding: 16px 12px; text-align: center;
+    font-size: 22px; font-weight: 600; min-height: 84px; display: flex; align-items: center; justify-content: center; }
+  .arrow { font-size: 30px; color: var(--accent); }
+  table { border-collapse: collapse; font-size: 23px; margin-top: 6px; }
+  th, td { border-bottom: 1px solid var(--line); padding: 10px 20px; text-align: left; }
+  th { color: var(--muted); font-weight: 600; }
+  .big { font-size: 64px; font-weight: 700; color: var(--accent); }
+  code { font-family: Menlo, monospace; font-size: .85em; background: #f3f4f7; padding: 2px 6px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div style="margin-top:120px">
+    <div class="tag">Huawei Tech Arena UK 2026 &middot; Career Survival Agent</div>
+    <h1>Career Survival v21d<br>Risk-first career ladder, review-ready</h1>
+    <p class="muted">Team Hachimi Mambo &middot; one Skill (<code>career-survival</code>) &middot; JiuwenSwarm single-agent mode &middot; no scripts</p>
+  </div>
+  <div class="foot"><span>Five questions, in order</span><span>1 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q1 &middot; How we thought while designing</div>
+  <h2>Survival is a constraint, and one Skill beats four</h2>
+  <ul>
+    <li>80% of the score is the mean of three full careers: one early elimination outweighs any single promotion.</li>
+    <li>Earlier versions used four Skills plus a Python helper: many tokens, and the pieces were not followed together.</li>
+  </ul>
+  <div class="quote">One Skill, read once, with a fixed order of priorities.</div>
+  <div class="foot"><span>Design reasoning</span><span>2 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q1 &middot; How we thought while designing</div>
+  <h2>One loop per decision, seven ordered priorities</h2>
+  <div class="cycle">
+    <div class="step">Observe</div><div class="arrow">&rarr;</div>
+    <div class="step">Choose one offered option + one-sentence note</div><div class="arrow">&rarr;</div>
+    <div class="step">Observe again</div>
+  </div>
+  <div class="cols">
+    <div class="col box"><h3>Small memory</h3><p>Risk level, blow-up count, last two reviews, stalled actions, next review month.</p></div>
+    <div class="col">
+      <ol>
+        <li>Avoid immediate failure</li>
+        <li>Cut accumulating risk</li>
+        <li>No new incidents in stories</li>
+        <li>Protect the next review</li>
+        <li>Repair a weak review</li>
+        <li>Use surplus wellbeing</li>
+        <li>Then grow</li>
+      </ol>
+    </div>
+  </div>
+  <p class="muted" style="font-size:21px;margin-top:14px">Every limit is our own safety margin, written as policy, not a simulator threshold.</p>
+  <div class="foot"><span>Design reasoning</span><span>3 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q2 &middot; What the logs showed</div>
+  <h2>Route 1: a turn that ends without a tool call</h2>
+  <div class="cols">
+    <div class="col box"><h3>Log</h3><p>The agent ended turns with text such as "Let me observe the next state". The runner's continuation limit stopped the run with no score.</p></div>
+    <div class="col box"><h3>Change</h3><p>Every reply during the game must contain a tool call; never end a turn with only a plan or a summary.</p></div>
+  </div>
+  <p class="muted" style="margin-top:30px">We read the event log of every run that ended early: three routes, one small rule for each.</p>
+  <div class="foot"><span>Debugging from logs</span><span>4 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q2 &middot; What the logs showed</div>
+  <h2>Route 2: the second blow-up</h2>
+  <div class="cols">
+    <div class="col box"><h3>Log</h3><p>The second blow-up came right after hinting at confidential plans to a colleague, or after choosing silence ("leave it there") about something seen. After the first incident the agent did not switch to risk reduction.</p></div>
+    <div class="col box"><h3>Change</h3><p>Never share or hint at confidential information. Staying silent about misconduct counts as concealment: raise it through a proper channel. After a first blow-up, treat every later risk warning as critical.</p></div>
+  </div>
+  <div class="foot"><span>Debugging from logs</span><span>5 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q2 &middot; What the logs showed</div>
+  <h2>Route 3: one point lost just before a review</h2>
+  <div class="cols">
+    <div class="col box"><h3>Log</h3><p>A story option in the two months before an early review cost one point of Output or Network; the promotion was missed. Two missed reviews lead to dismissal.</p></div>
+    <div class="col box"><h3>Change</h3><p>Before a review, prefer options that keep delivery moving and settle disagreements privately; restore a statistic a story has just lowered.</p></div>
+  </div>
+  <table style="margin-top:26px">
+    <tr><th>Promoted at the first review (own key)</th><th>Games</th></tr>
+    <tr><td>Earlier Skill</td><td>5 of 14</td></tr>
+    <tr><td>Same rule, softened reason</td><td>1 of 4</td></tr>
+    <tr><td>v21d, concrete sentence</td><td>6 of 8</td></tr>
+  </table>
+  <div class="foot"><span>Debugging from logs</span><span>6 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q2 &middot; What the logs showed</div>
+  <h2>Results on two models</h2>
+  <table>
+    <tr><th>Model</th><th>Games</th><th>Outcome</th></tr>
+    <tr><td>Own key, first batch</td><td>8</td><td>8 of 8 completed, mean 63.0; one reached L6 (78.29), our only L6</td></tr>
+    <tr><td>Own key, later batch</td><td>3</td><td>55.5, 21.1, 19.6; the other version run then fared as badly</td></tr>
+    <tr><td>Competition model</td><td>2</td><td>68.56 completed; in the other run the agent never loaded the Skill</td></tr>
+  </table>
+  <p class="muted" style="font-size:22px;margin-top:26px">Small samples and large run-to-run variance: we report every game, not the best one.</p>
+  <div class="foot"><span>Evidence</span><span>7 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q3 &middot; Scripts and reference files</div>
+  <h2>No scripts, on purpose</h2>
+  <div class="cols">
+    <div class="col">
+      <ul>
+        <li>No scripts and no reference files; the agent is told not to use the code tool.</li>
+        <li>Our previous helper for exact checks was never called by the model in official-runner tests.</li>
+        <li>Every check the Skill needs can be read from the next observation, so it is written in plain language.</li>
+      </ul>
+    </div>
+    <div class="col box"><h3>Why it matters</h3><p>The checks live where the agent always sees them. Fewer moving parts means fewer ways to fail and fewer tokens.</p></div>
+  </div>
+  <div class="foot"><span>Scripts</span><span>8 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q4 &middot; Generality and robustness</div>
+  <h2>Built only on public, current-run evidence</h2>
+  <div class="cols">
+    <div class="col">
+      <h3 style="font-size:26px;margin:0 0 12px">Adapts</h3>
+      <ul>
+        <li>Statistics, grades, listed effects and the tone of feedback; no event titles, story answers or hidden thresholds.</li>
+        <li>Effects are measured: no visible gain twice means stalled.</li>
+        <li>The risk gauge reads meaning, not exact words.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3 style="font-size:26px;margin:0 0 12px">Would hurt</h3>
+      <ul>
+        <li>A different review timetable weakens the pre-review rule.</li>
+        <li>A model that follows instructions less closely skips rules; the ordered priorities still give a safe default.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Generality</span><span>9 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div class="tag">Q5 &middot; Agents and agent Skills</div>
+  <h2>A Skill is a contract the agent mostly follows</h2>
+  <div class="cols">
+    <div class="col box"><h3>What Skills add</h3><p>A stable way of working: what to check first, what to remember, when to stop. The route by which lessons from old logs reach a fresh context.</p></div>
+    <div class="col box"><h3>Where they fall short</h3><p>They cannot force use: in a few games the agent never loaded the Skill. Wording matters as much as rules. More rules did worse on the competition model.</p></div>
+  </div>
+  <p style="margin-top:30px">Lesson: keep it short and concrete, and test every change by playing and reading the logs.</p>
+  <div class="foot"><span>Agents and Skills</span><span>10 / 11</span></div>
+</section>
+
+<section class="slide">
+  <div style="margin-top:200px">
+    <h1>Thank you</h1>
+    <p class="muted">Team Hachimi Mambo &middot; Career Survival v21d</p>
+  </div>
+  <div class="foot"><span>Design, evidence, lessons</span><span>11 / 11</span></div>
+</section>
+
+</body>
+</html>

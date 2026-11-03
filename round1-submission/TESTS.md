@@ -23,6 +23,5 @@ changes described in `solution/design/decision_report.md`. Games 3 to 6 used the
 Mean 64.97 (standard deviation 6.6), no eliminations. The two L4 games both received three C grades
 in the first eighteen months and finished one level lower.
 
-Variants tried and rejected on the same setup are in `candidates/Mikaela0127/career-survival-v3` and
-`career-survival-v4`. On the same setup, `techarena-career-sim/solution/` (CareerSurvivor v11) was
-eliminated at L1 in both of two games (17.41, 17.23).
+Variants tried and rejected on the same setup are in `experiments/career-survival-v3` and
+`experiments/career-survival-v4`.

@@ -1,21 +1,30 @@
-# Mikaela0127: candidates and tools
+# Experiments
 
-Owner: Mikaela0127. The version that was submitted lives in `official/`; this folder holds the
-rest.
+The variants I kept from after the round-1 submission, each with its own `TESTS.md` (what changed, every game
+played, and why it was kept or dropped). Paths written as `official/solution/` inside these files refer to
+what is now `round1-submission/solution/` (v2).
 
-| Folder | What it is |
-|---|---|
-| `career-survival-v3/` | v2 plus Energy rules for capped statistics. Rejected: 65.34, 55.48 (see `TESTS.md`) |
-| `career-survival-v4/` | v3 plus restoring statistics below their level best. Rejected: 61.99, 65.55 |
-| `career-survival-v5/` | v2 plus a skill phase once Network and Output stop rising. Not adopted: 19.23 (eliminated at L1), 57.84 (competition key) |
-| `career-survival-v6/` | v2 with the review-protection rule rewritten: cooperative story options before a review, win back a loss. Not adopted: 58.33, 54.20 (competition key) |
-| `career-survival-v7/` | v2 with grades read with their outcome and stalled Energy actions excluded (from a Codex discussion). Not adopted: 58.80, 64.55, 51.36, 44.30 eliminated (competition key) |
-| `A-risk-first/`, `merged-v1/`, `merged-v2/` | Candidates from 20 October, engine 1.0.5. Not compliant with the rules published on 26 October |
-| `analysis/` | Log analysis behind the 20 October handover (engine 1.0.5); `REPORT.md` is the summary |
-| `tools/run_games.sh` | Plays several games in a row and appends one row per game to a results file |
-| `tools/timeline.py`, `tools/quarterly.py` | Per-month timeline and quarterly choices of one game |
-| `tools/video/` | `compose.swift` builds the presentation (slides plus the speaker's camera); `pauses.swift` finds section pauses in a recording |
-| `HANDOVER-2026-10-20.md` | Handover of the 20 October local evaluation |
+Scores are the simulator's `quantitative_score` for one 48-month game. "Own key" means a cheaper model on
+our own API key; "competition key" means the official evaluation model. The two are not directly
+comparable, and single games vary by 20 to 40 points, so each table lists every game, not the best one.
+
+| Folder | What it tests | Outcome |
+|---|---|---|
+| `career-survival-v3`, `v4` | Energy rules for capped statistics; restoring statistics below their level best | Rejected |
+| `career-survival-v5` to `v7` | A skill phase once Network and Output stop rising; review protection; reading grades with outcomes | Not adopted |
+| `career-survival-v8` | Scope section and clearer rule layout, SKILL.md only | Not adopted |
+| `career-survival-v15`, `v15b` | Risk tally from listed effects; wealth guard; missed-promotion handling | Dropped |
+| `career-survival-v16`, `v17` | Ending dimensions (wealth and risk); plateau handling | Dropped |
+| `career-survival-v19`, `v20` | Pre-review protection; confidentiality; after-a-blow-up caution | Merged into v21 |
+| `career-survival-v21` | v20 plus "every reply must contain a tool call" | Basis of the final line |
+| `career-survival-v21b`, `v21c` | Rewording the pre-review rationale (softened vs concrete) | Concrete wording kept |
+| `career-survival-v21d` | v21c plus "staying silent counts as concealment" | Final candidate (`round3-submission/`) |
+| `career-survival-v21e`, `v21f` | Spending stalled Energy on Skill learning | Dropped: 2 Energy for +1 Skill |
+| `career-survival-v21g` | v21d plus "the first tool call must load the Skill" | Alternative to v21d |
+| `career-survival-v22` to `v26` | Rules moved into the manifest; minimal changes; L6 attempts; short replies | Dropped |
+| `tools/run_games.sh` | Plays several games in a row and appends one row per game to a results file | |
+| `tools/quarterly.py` | Lists the quarterly choices of one game from its event log | |
+| `tools/video/` | `compose.swift` builds the presentation (slides plus the speaker's camera); `pauses.swift` finds section pauses in a recording | |
 
 `tools/video/*.swift` use only macOS frameworks. Compile `compose.swift` as `main.swift` with
 `swiftc -O main.swift -o compose`; the `swift` interpreter crashes on it.
