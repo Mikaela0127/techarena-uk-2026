@@ -34,7 +34,7 @@ automated scores whose live-play part averages three official runs.
 | Folder | Contents |
 |---|---|
 | `round1-submission/` | The round-1 submission (v2): Skill, manifest, design documents, video script and test record |
-| `round3-submission/` | The round-3 submission (v21d): v2 plus the log-driven rules, its design documents, and the video script and slides |
+| `round3-submission/` | The round-3 submission (v21d): v2 plus the log-driven rules and its design documents; also a video script and slides written for v21d, but no new video was recorded and the submitted package reused the round-1 video |
 | `experiments/` | The experiments I kept, each with its own `TESTS.md`, plus small tools for running games and reading logs |
 
 The presentation videos are not included (file size, and they show team members).
@@ -47,10 +47,15 @@ Official scores:
 |---|---|---|
 | 1 | v2 (`round1-submission/`) | 58.12 |
 | 2 | A teammate's version (not in this repository) | 58.88 |
-| 3 | v21d (`round3-submission/`) | not yet published (3 November 2026) |
+| 3 | v21d (`round3-submission/`) | 75.08 |
 
-On the contest scoreboard as viewed on 3 November 2026, the team was 32nd of 70 scored teams (227 registered
-teams in total).
+In the Stage 1 ranking published on 4 November 2026, which takes each team's best round, the team was 3rd of
+90 ranked teams (227 registered) and qualified for expert review as one of the top ten. Final results are due at
+the online ceremony in late November 2026.
+
+The official 75.08 is a composite: 80% of the mean of three official runs, plus 10% Skill quality and 10% token
+efficiency. The local figures below are single-game scores under different conditions, so the two are not directly
+comparable, and 75.08 should not be read as v21d's expected score in one game.
 
 Local test games, one 48-month game each. "Own key" is a cheaper model on our own API key, "competition" is
 the official evaluation model; the two are not comparable, and one game can differ from the next by 20 to 40
